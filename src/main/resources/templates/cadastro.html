@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Cadastro</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          background: #eef2ff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+        }
+        .container {
+          background: #fff;
+          padding: 2rem;
+          border-radius: 10px;
+          width: 100%;
+          max-width: 450px;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+          text-align: center;
+          margin-bottom: 1.5rem;
+          color: #333;
+        }
+        label {
+          font-size: 0.9rem;
+          color: #444;
+          display: block;
+          margin-bottom: 0.3rem;
+        }
+        input {
+          width: 100%;
+          padding: 0.6rem;
+          margin-bottom: 1rem;
+          border: 1px solid #ccc;
+          border-radius: 6px;
+        }
+        .btn {
+          width: 100%;
+          padding: 0.7rem;
+          border: none;
+          border-radius: 6px;
+          background: #4f46e5;
+          color: #fff;
+          font-weight: bold;
+          cursor: pointer;
+          transition: 0.2s;
+        }
+        .btn:hover {
+          background: #4338ca;
+        }
+        .extra {
+          text-align: center;
+          margin-top: 1rem;
+          font-size: 0.9rem;
+        }
+        .extra a {
+          color: #4f46e5;
+          text-decoration: none;
+        }
+        .extra a:hover {
+          text-decoration: underline;
+        }
+        .error {
+          font-size: 0.8rem;
+          color: red;
+          display: none;
+          margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <h1>Cadastro</h1>
+    <form id="registerForm" method="post">
+        <label for="username">Usuário</label>
+        <input id="username" name="nome" type="text" placeholder="Digite seu usuário">
+        <p id="usernameError" class="error">Informe o usuário</p>
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="Digite seu email">
+        <p id="emailError" class="error">Informe um email válido</p>
+
+        <label for="password">Senha</label>
+        <input id="password" name="senha" type="password" placeholder="Digite sua senha">
+        <p id="passwordError" class="error">Senha deve ter pelo menos 6 caracteres</p>
+
+        <label for="confirmPassword">Confirmar Senha</label>
+        <input id="confirmPassword" type="password" placeholder="Repita a senha">
+        <p id="confirmError" class="error">As senhas não coincidem</p>
+
+        <button class="btn" type="submit">Cadastrar</button>
+        <p id="serverError" class="error" style="text-align:center;"></p>
+    </form>
+    <div class="extra">
+        Já tem conta? <a href="login">Entrar</a>
+    </div>
+</div>
+
+</body>
+</html>
