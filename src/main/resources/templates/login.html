@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BR" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -78,7 +78,7 @@
 <body>
 <div class="container">
     <h1>Login</h1>
-    <form id="loginForm">
+    <form id="loginForm" action="/logar" method="post">
         <label for="username">Usuário</label>
         <input id="username" name="nome" type="text" placeholder="Digite seu usuário">
         <p id="usernameError" class="error">Informe o usuário</p>
@@ -88,6 +88,7 @@
         <p id="passwordError" class="error">Informe a senha</p>
 
         <button class="btn" type="submit">Entrar</button>
+        <p th:if="${erroLogin != null}" th:text="${erroLogin}"></p>
         <p id="serverError" class="error" style="text-align:center;"></p>
     </form>
     <div class="extra">
